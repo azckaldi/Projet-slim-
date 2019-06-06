@@ -1,0 +1,19 @@
+{% include 'partials/header.twig' %}
+
+<h1 class="text-primary">Digital & Product Designer</h1>
+<h3 class="text-secondary mb-4">Bonjour, je m'appelle Némo Fazakerley et je suis basé à Paris. J'ai pour habitude de designer des interfaces intuitives et des expériences adaptées au monde moderne.</h3>
+
+<h4 class="mb-4">Voici mes 5 derniers projets amusez vous bien !</h4>
+
+{% for _project in projects %}
+
+    <div class="card p-4 mb-4">
+        <div>
+            <h3>{{ _project.title }}</h3>
+            <h4 class="badge badge-success">{{ _project.type}}</h4>
+        </div>
+        <a href="{{ path_for('projet', { id: _project.id }) }}" class="btn btn-primary" style="width: 200px;">En voir plus</a>
+    </div>
+{% endfor %}
+
+{% include 'partials/footer.twig' %}

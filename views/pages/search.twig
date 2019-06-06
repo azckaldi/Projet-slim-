@@ -1,0 +1,17 @@
+{% include 'partials/header.twig' %}
+
+<h2 class="mb-4">Résultat de votre recherche</h2>
+
+{% for _project in projects %}
+
+    <div class="card p-4 mb-4">
+        <div>
+            <h3>{{ _project.title }}</h3>
+            <h4 class="badge badge-success">{{ _project.type}}</h4>
+        </div>
+        <a href="{{ path_for('projet', { id: _project.id }) }}" class="btn btn-primary" style="width: 200px;">En voir plus</a>
+        
+    </div>
+{% endfor %}
+
+{% include 'partials/footer.twig' %}

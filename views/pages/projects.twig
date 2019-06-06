@@ -1,0 +1,37 @@
+{% include 'partials/header.twig' %}
+
+<h2 class="mb-4">Projets</h2>
+
+{% for _project in projects %}
+
+    <div class="card p-4 mb-4">
+        <div>
+            <h3>{{ _project.title }}</h3>
+            <h4 class="badge badge-success">{{ _project.type}}</h4>
+        </div>
+        <a href="{{ path_for('projet', { id: _project.id }) }}" class="btn btn-primary" style="width: 200px;">En voir plus</a>
+        
+    </div>
+{% endfor %}
+
+
+
+{# {% if pagination.needed %}
+    <div class="">
+        {% for i in 1..pagination.lastpage %}
+            <a class="{% if i == pagination.page %}active{% endif %} item" href="?page={{ i }}">{{ i }}</a>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<div class="ui container">
+    {% for post in projects %}
+        <a class="item">
+        	{# Post contents (title, url, ...) #}
+        {# </a>
+    {% endfor %}
+</div> #} 
+
+
+
+{% include 'partials/footer.twig' %}
